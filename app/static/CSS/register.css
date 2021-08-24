@@ -1,0 +1,13 @@
+#reg{
+    background-image:  linear-gradient(rgb(133, 161, 163), rgb(90, 107, 106), rgb(136, 209, 209));
+    height: 93vh;
+}
+
+#reg_form{
+    border: solid black;
+    border-radius: 10px 10px;
+    margin: 0 auto;
+    padding: 3%;
+    margin-top: 1%;
+    
+}

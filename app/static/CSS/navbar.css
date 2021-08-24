@@ -1,0 +1,29 @@
+#user_op{
+   background-color: black;
+   color: white;
+   border-radius: 10% 10%;
+   padding: 3%;
+}
+#badge{
+    display: flex;
+}
+
+#nav_col{
+    margin-left: 92%;
+    color: white;
+}
+
+img{
+    size: 300px;
+}
+
+a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+#label{
+    font-style:italic ;
+    font-weight: bolder;
+}

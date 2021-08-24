@@ -1,0 +1,45 @@
+#display{
+    height: 88vh;
+    background-image:url("../images/Abstract\ Blue\ Watercolor\ Paint\ Brush\ Stroke\ Frame.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.btn{
+    margin-top: 10%;
+}
+
+h1{
+    font-size: 250%;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+#exp{
+    padding: 2%;
+    margin-top: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#intro{
+    height: 88vh;
+    background-color:white;
+    text-align: inherit;
+}
+
+#sub_intro{
+    
+    margin-top: 40%;
+    padding: 5%;
+    justify-content: space-between;
+    height: 60vh;
+}
+
+#advert{
+   
+    width: 50%;
+    margin: 35%;
+    padding: 2%;
+    margin-top: 25%;
+    font-size: 30px;
+}
