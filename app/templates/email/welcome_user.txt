@@ -1,0 +1,5 @@
+Hello {{user.username}}
+Welcome to the Pitch-maker
+We give the perfect platform to practice your pitching skills.
+A whole lot more fun when you can vote and yours gets voted too.
+Kindly verify to continue
