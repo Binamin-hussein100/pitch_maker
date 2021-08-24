@@ -1,3 +1,4 @@
 virtual/
 start.sh
+node_modules/
 *pyc/
