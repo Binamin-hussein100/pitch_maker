@@ -1,0 +1,7 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<div>
+    {% if current_user %}
+        {{ wtf.quick_form(comment_form) }}
+    {% endif %}
+</div>
