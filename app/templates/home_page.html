@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles%}
+    <!-- {{ super() }} -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'CSS/home.css')}}">
+{% endblock %}
+
+{% block script %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'js/like.js')}}">
+{% endblock %}
+
+
+{% block content %}
+    <div id="purge" class="container-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="demo_pitch">
+                        <div>
+                            <p >I am considering opening a high end Italian restaurant in downtown London because there are currently no such restaurants there.</p>
+                            <p>BY: Peter Marcus</p>
+                            <div class="container-fluid">
+                                <div class="c-section">
+                                    <button class="btn btn-outline-dark m-3"><i class="fas fa-thumbs-up"></i><span class="badge bg-info m-2">4</span>
+                                    </button>
+                                    <button class="btn btn-outline-dark m-3"><i class="fas fa-thumbs-down"></i><span class="badge bg-info m-2">4</span></button>
+                                    <button class="btn btn-outline-dark m-2"><i class="fas fa-comment"></i><span class="badge bg-info m-2">...</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                      <div>
+                        {% for pitch in pitches %}
+                            <div class="demo_pitch">
+                                <p>{{ pitch.pitch }}</p>
+                                <p>BY: {{  pitch.author }}</p>
+                                <div class="container-fluid">
+                                    <div class="c-section">
+                                        <div id="spacing">
+                                            <button id="like_btn" onclick="like()" class="btn btn-outline-dark m-3"><i class="fas fa-thumbs-up"></i><span  id="count-el" class="badge bg-info m-2">17</span>
+                                            </button>
+                                            <button id="dislike_button" onclick="dislike()" class="btn btn-outline-dark m-3"><i class="fas fa-thumbs-down"></i><span id="dislike_vote" class="badge bg-info m-2">5</span></button>
+                                            <button class="btn btn-outline-dark m-2"><i class="fas fa-comment"></i><span class="badge bg-info m-2">...</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                </div>
+                <div id="pitch_form" class="col-md-4">
+                    {% if current_user %}
+                        {{ wtf.quick_form(form) }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/like.js"></script>
+    <script src="../static/js/dislike.js"></script>
+{%endblock%}
