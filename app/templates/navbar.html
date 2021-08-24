@@ -1,0 +1,39 @@
+{% block styles%}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'CSS/navbar.css')}}">
+{% endblock %}
+
+<div class="container-fluid navbar bg-info">
+	<div class="navdiv">
+		<a>
+			<div id="badge" class="logodiv mx-2">
+				<img src="../static/images/mortar-board.svg" alt="">
+				<div class="name mx-3"> <strong> <h3 id="label">PITCH-MAKER</h3> </strong></div>
+			</div>
+        </a>
+		
+	</div>
+	<div class="navbar-header">
+		<button id="user_op" type="button" class="navbar-toggle btn-dark" data-toggle="collapse" data-target=".navbar-collapse">
+			<h5>Account.</h5>
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		
+	</div>
+	<div id="nav_col" class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li><a href="/">Home</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-left">
+			{% if current_user.is_authenticated %}
+			<li><a href="{{ url_for('main.index',uname = current_user.username)}}">Profile</a></li>
+			<li style="color: white; padding: 15px;">{{current_user.username}}</li>
+			<li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+			{% else %}
+			<li><a href="{{ url_for('auth.login') }}">Sign in</a></li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
