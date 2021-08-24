@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+<!-- style block -->
+{% block styles%}
+    <!-- {{ super() }} -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'CSS/index.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div id="intro" class="col-md-4 ">
+                <Div id="sub_intro">
+                    <H1>PITCH-MAKER</H1>
+                        <p id="exp">The gist of pitching is to get off to a fast start, explain the relevance of what you do, stay at a high level, listen to audience reaction and then pitch over and over again until you get it right.</p>
+                    <a href="{{url_for('auth.login')}}"><button class="btn btn-info"> CREATE A PITCH</button></a>
+                </Div>
+            </div>
+            <div id="display" class="col-md-8 bg-info">
+                <div id="advert">
+                    <h2>PITCHING IS PART OF INSTILLING FEAR.</h2>
+                    <p>Instill it in a minute.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

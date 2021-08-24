@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles%}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'CSS/login.css')}}">
+{% endblock %}
+
+
+{% block content %}
+<div id="logstyle" class="container-fluid">
+    <div class="container">
+        <div class="row" >
+            <div id="login" class="col-lg-5">
+                <h3>LOGIN:</h3>
+                {{wtf.quick_form(login_form)}}
+                <p>YOU DONT HAVE AN ACCOUNT? <a href="{{url_for('auth.register_user')}}" class="btn btn-info">SIGN UP</a> </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

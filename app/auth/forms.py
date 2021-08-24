@@ -11,7 +11,7 @@ class RegistrationForm(FlaskForm):
     username = StringField('ENTER YOUR USER NAME: ', validators=[Required()])
     email = StringField('Your email address: ', validators=[Required(),Email()])
     password = PasswordField('Password: ',validators=[Required(),EqualTo( 'password_confirm', message='Password must match')])
-    password_confirm = PasswordField('password', validators=[Required()])
+    password_confirm = PasswordField('Confirm password:', validators=[Required()])
     submit = SubmitField('SIGN UP')
     
     def validate_email(self,data_field):
@@ -21,3 +21,10 @@ class RegistrationForm(FlaskForm):
         def validate_username(self,data_field):
             if User.query.filter_by(username = data_field.data).first():
                 raise ValidationError()
+            
+            
+class LoginForm(FlaskForm):
+    email = StringField('Your Email Address',validators=[Required(),Email()])
+    password = PasswordField('Password',validators =[Required()])
+    remember = BooleanField('Remember me')
+    submit = SubmitField('Submit:')
